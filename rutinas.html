@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Rutinas de Ejercicio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      background-image: url('https://img.eldefinido.cl/fotos/gif/2018-07-04-9412VZN7936.gif'); 
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed; 
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #ffffff; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      max-width: 500px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #26ff00;
+      margin-bottom: 20px;
+    }
+
+    .opcion {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 2px solid #26ff00;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 10px;
+      padding: 15px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .opcion:hover {
+      background-color: #26ff00;
+      color: #000000;
+    }
+
+    .opcion p {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .regresar {
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #26ff00;
+      border: none;
+      border-radius: 5px;
+      color: #000000;
+      cursor: pointer;
+      padding: 10px 20px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    button:hover {
+      background-color: #23e000;
+      transform: scale(1.05);
+    }
+
+    .oculto {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Bienvenido a las Rutinas de Ejercicio</h1>
+    
+    <div id="opciones">
+      <div class="opcion opcion-bajar" onclick="mostrarRutinas('bajar')">
+        <p>Bajar de peso</p>
+      </div>
+      <div class="opcion opcion-subir" onclick="mostrarRutinas('subir')">
+        <p>Subir de peso</p>
+      </div>
+      <div class="opcion opcion-mantener" onclick="mostrarRutinas('mantener')">
+        <p>Mantenerse</p>
+      </div>
+    </div>
+    
+    <div id="informacion" class="oculto">
+      <!-- Aqui se mostrara la informacion sobre las rutinas segun el objetivo seleccionado -->
+      <p>Seleccione una opcion para ver las rutinas.</p>
+    </div>
+
+    <div class="regresar">
+      <button onclick="volverAlMenuPrincipal()">Volver al Menu Principal</button>
+    </div>
+  </div>
+
+  <script>
+    function mostrarRutinas(objetivo) {
+      let informacion = '';
+
+      switch (objetivo) {
+        case 'bajar':
+          informacion = "<p>Rutinas para bajar de peso:</p><ul><li>Cardio de 30 minutos</li><li>Entrenamiento de fuerza 3 veces por semana</li><li>Dieta balanceada</li></ul>";
+          break;
+        case 'subir':
+          informacion = "<p>Rutinas para subir de peso:</p><ul><li>Entrenamiento de fuerza con aumento de peso progresivo</li><li>Consumo de calorias adicionales</li><li>Descanso adecuado</li></ul>";
+          break;
+        case 'mantener':
+          informacion = "<p>Rutinas para mantenerse:</p><ul><li>Entrenamiento de mantenimiento 2 veces por semana</li><li>Dieta equilibrada</li><li>Control del peso corporal</li></ul>";
+          break;
+        default:
+          informacion = "<p>Selecciona un objetivo valido</p>";
+      }
+
+      document.getElementById('informacion').innerHTML = informacion;
+      document.getElementById('informacion').classList.remove('oculto');
+    }
+
+    function volverAlMenuPrincipal() {
+      window.location.href = "index.html"; 
+    }
+  </script>
+</body>
+</html>

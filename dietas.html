@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Mi Dieta</title>
+    <style>
+        body {
+            background-image: url('https://static.wixstatic.com/media/6a6659_f682f71e0dea4c919fa3b28f36192b7e~mv2.gif/v1/fill/w_645,h_359,al_c/6a6659_f682f71e0dea4c919fa3b28f36192b7e~mv2.gif');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            color: #ffffff;
+            font-family:    Arial, sans-serif;
+        }
+        
+        .regresar {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff0000;
+            color: #e5ff00;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-family: Ariel, sans-serif;
+        }
+        
+        .regresar:hover {
+            background-color: #1b241c;
+        }
+
+        section {
+            display: none;
+            margin-bottom: 20px;
+            overflow: hidden;
+            clear: both;
+            width: 80%;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+        }
+        
+        section img {
+            float: left;
+            margin-right: 20px;
+            border-radius: 5px;
+            width: 150px;
+            height: auto;
+        }
+        
+        section:nth-child(even) img {
+            float: right;
+            margin-left: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dietas</h1>
+
+    <button class="regresar" onclick="mostrarDieta('subir');">Dieta para Subir de Peso</button>
+
+    <button class="regresar" onclick="mostrarDieta('bajar');">Dieta para Bajar de Peso</button>
+
+    <button class="regresar" onclick="mostrarDieta('mantener');">Dieta para Mantenerse en su Peso</button>
+
+    <button class="regresar" onclick="window.location.href = 'index.html';">Regresar al Menu Principal</button>
+
+    <div id="contenedorDietas">
+        <section id="subir">
+            <img src="imagenes/subir_peso.jpg" alt="Subir de Peso">
+            <h2>Dieta para Personas que Quieran Subir de Peso</h2>
+            <p>Las personas que deseen aumentar de peso pueden seguir una dieta que incluya:</p>
+            <ul>
+                <li>Aumentar la ingesta de calorias mediante alimentos densos en energia</li>
+                <li>Incluir fuentes saludables de grasas y proteinas</li>
+                <li>Realizar ejercicios de fuerza para aumentar la masa muscular</li>
+                <li>Comer porciones mas grandes y frecuentes</li>
+            </ul>
+        </section>
+
+        <section id="bajar">
+            <img src="imagenes/bajar_de_peso.jpeg" alt="Bajar de Peso">
+            <h2>Dieta para Personas que Quieran Bajar de Peso</h2>
+            <p>Las personas que deseen bajar de peso pueden seguir una dieta que incluya:</p>
+            <ul>
+                <li>Reducir la ingesta de calorias y controlar las porciones de comida</li>
+                <li>Aumentar la actividad fisica y el ejercicio regular</li>
+                <li>Consumir alimentos bajos en calorias pero ricos en nutrientes, como frutas y verduras</li>
+                <li>Limitar la ingesta de alimentos procesados, grasas saturadas y azucares anadidos</li>
+                <li>Beber suficiente agua y evitar las bebidas azucaradas</li>
+            </ul>
+        </section>
+
+        <section id="mantener">
+            <img src="imagenes/mantener-peso.jpg" alt="Mantener Peso">
+            <h2>Dieta para Personas que Quieran Mantenerse en su Peso</h2>
+            <p>Las personas que deseen mantener su peso pueden seguir una dieta que incluya:</p>
+            <ul>
+                <li>Mantener un equilibrio entre calorias consumidas y gastadas</li>
+                <li>Elegir una variedad de alimentos saludables y nutritivos</li>
+                <li>Practicar el control de porciones y moderar los antojos</li>
+                <li>Mantenerse activo fisicamente con ejercicio regular</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        function mostrarDieta(dieta) {
+            var secciones = document.querySelectorAll('section');
+            secciones.forEach(function(sec) {
+                sec.style.display = 'none';
+            });
+            document.getElementById(dieta).style.display = 'block';
+        }
+    </script>
+</body>
+</html>

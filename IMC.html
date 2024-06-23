@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Calculadora de IMC</title>
+</head>
+<body style="text-align: center; background-image: url('https://cloud.educaplay.com/recursos/220/7046166/imagen_1_1601234770.gif'); background-size: cover;">
+
+    <h2>Calculadora de IMC</h2>
+    
+    <form action="imc.php" method="post">
+        <p style="text-align: center;">
+            Su nombre(s): <input type="text" name="nombre" required><br><br>
+            Apellido Paterno: <input type="text" name="apellido_paterno" required><br><br>
+            Apellido Materno: <input type="text" name="apellido_materno" required><br><br>
+            Sexo: 
+            <select name="sexo" required>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+            </select><br><br>
+            Edad: <input type="number" name="edad" min="1" required><br><br>
+            Altura (metros): <input type="number" name="altura" step="0.01" required><br><br>
+            Peso (kilogramos): <input type="number" name="peso" step="0.1" required><br><br>
+            <button type="submit">Calcular IMC</button>
+        </p>
+    </form>
+
+    <a href="index.html"><button>Volver al Menu Principal</button></a>
+
+</body>
+</html>

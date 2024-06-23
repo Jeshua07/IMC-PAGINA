@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Reproductor de video</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center; 
+            background-color: #fcbd00; 
+        }
+
+        .video-container {
+            text-align: center; 
+            margin-bottom: 20px; 
+        }
+
+        video {
+            width: 100%; 
+            border: 1px solid #4a04ee; 
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #8c076b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #00d0ff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="video-container">
+    <video width="640" height="360" controls>
+        <source src="videos/obesidad.mp4" type="video/mp4">
+        Tu navegador no soporta la etiqueta de video.
+    </video>
+
+    <button onclick="volverAlMenuPrincipal()">Volver al Menu Principal</button>
+</div>
+
+<script>
+    function volverAlMenuPrincipal() {
+        window.location.href = "index.html"; 
+    }
+</script>
+
+</body>
+</html>
